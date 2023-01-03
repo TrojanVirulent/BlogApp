@@ -8,9 +8,9 @@ public class ResourceNotFoundException extends RuntimeException{
 	
 	private String resourceName;
 	private String fileName;
-	private String fieldValue;
+	private long fieldValue;
 	
-	public ResourceNotFoundException(String resourceName, String fileName, String fieldValue) {
+	public ResourceNotFoundException(String resourceName, String fileName, long fieldValue) {
 		super(String.format("%s not found with %s : %s", resourceName, fileName, fieldValue));
 		this.resourceName = resourceName;
 		this.fileName = fileName;
@@ -25,7 +25,7 @@ public class ResourceNotFoundException extends RuntimeException{
 		return fileName;
 	}
 
-	public String getFieldValue() {
+	public long getFieldValue() {
 		return fieldValue;
 	}
 
